@@ -7,10 +7,10 @@ BANNER = """
 """
 
 MENU_ITEMS = [
-    "Test 1",
-    "Test 2",
-    "Test 3",
-    "Test 4",
-    "Test 5",
-    "Test 6"
+    "Get a shell",
+    "Copy files",
+    "Update all",
+    "Settings",
+    "About",
+    "Exit"
 ]

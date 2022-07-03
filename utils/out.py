@@ -1,6 +1,15 @@
 def banner() -> None:
+    from os import get_terminal_size
     from containers import consts
-    print(consts.BANNER)
+
+    terminal_width = get_terminal_size()[0]
+    
+    formatted_banner = ""
+    for line in consts.BANNER.split("\n"):
+        line = line.center(terminal_width)
+        formatted_banner += f"{line}\n"
+
+    print(formatted_banner)
 
 
 def menu() -> None:
