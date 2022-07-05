@@ -16,6 +16,14 @@ def reset_style() -> None:
     print(Style.RESET_ALL)
 
 
+def clear() -> None:
+    from os import name, system
+    command = "clear"
+    if name in ("nt", "dos"):
+        command = "cls"
+    system(command)
+
+
 def banner() -> None:
     from os import get_terminal_size
     from containers import consts
@@ -42,8 +50,20 @@ def menu() -> None:
     white()
     normal()
     for item in consts.MENU_ITEMS:
-        formatted_item = f"[{consts.MENU_ITEMS.index(item)}] {item}"
+        formatted_item = f"[{consts.MENU_ITEMS.index(item) + 1}] {item}"
         formatted_item = formatted_item.center(space_between)
         print(formatted_item, end = "")
 
     print("\n")
+
+
+def fancy_input(prompt: str) -> str:
+    from os import get_terminal_size
+    print("\n")
+
+    space = (round(get_terminal_size()[0] / 2)) - len(prompt) - 1
+    prompt = f"{' ' * space}{prompt}"
+
+    result = input(prompt)
+
+    return result
