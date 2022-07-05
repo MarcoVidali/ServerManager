@@ -4,6 +4,9 @@ def red() -> None:
 def white() -> None:
     from colorama import Fore
     print(Fore.WHITE)
+def blue() -> None:
+    from colorama import Fore
+    print(Fore.BLUE)
 
 def normal() -> None:
     from colorama import Style
@@ -38,6 +41,7 @@ def banner() -> None:
     red()
     bright()
     print(formatted_banner)
+    reset_style()
 
 
 def menu() -> None:
@@ -53,6 +57,7 @@ def menu() -> None:
         formatted_item = f"[{consts.MENU_ITEMS.index(item) + 1}] {item}"
         formatted_item = formatted_item.center(space_between)
         print(formatted_item, end = "")
+    reset_style()
 
     print("\n")
 

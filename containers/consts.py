@@ -14,3 +14,5 @@ MENU_ITEMS = [
     "About",
     "Exit"
 ]
+
+FEEDBACK_SLEEP_TIME = 2
