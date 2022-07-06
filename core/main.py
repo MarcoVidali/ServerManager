@@ -1,6 +1,10 @@
 def main() -> None:
     from utils import out, misc, feedback, actions
     
+    # checking if settings
+    if not misc.check_settings():
+        misc.create_settings()
+
     # clearing, printing banner and menu
     out.clear()
     out.banner()

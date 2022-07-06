@@ -10,7 +10,7 @@ def check_action(action: int):
         feedback.info("Retriving an SSH shell...")
         
         # opening settings.json
-        with open(consts.SETTINGS_PATH) as json:
+        with open(consts.SETTINGS_PATH, "r") as json:
             content = load(json)
             user = content["user"]
             ip = content["ip"]
@@ -26,7 +26,7 @@ def check_action(action: int):
         out.clear()
 
         # opening settings.json
-        with open(consts.SETTINGS_PATH) as json:
+        with open(consts.SETTINGS_PATH, "r") as json:
             content = load(json)
             user = content["user"]
             ip = content["ip"]
@@ -39,6 +39,7 @@ def check_action(action: int):
 
             if exists(path):
                 destination = out.fancy_input("Enter the destination: ")
+                out.clear()
                 system(f"scp {path} {user}@{ip}:{destination}")
             else:
                 feedback.error("File doesn't exist.")
@@ -48,6 +49,7 @@ def check_action(action: int):
 
             if exists(path):
                 destination = out.fancy_input("Enter the destination: ")
+                out.clear()
                 system(f"scp -r {path} {user}@{ip}:{destination}")
             else:
                 feedback.error("Directory doesn't exist.")
@@ -61,7 +63,7 @@ def check_action(action: int):
         out.clear()
         
         # opening settings.json
-        with open(consts.SETTINGS_PATH) as json:
+        with open(consts.SETTINGS_PATH, "r") as json:
             content = load(json)
             user = content["user"]
             ip = content["ip"]

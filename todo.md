@@ -2,4 +2,4 @@
 Add more actions
 
 # DONE
-V1 :)
+Added settings at startup
