@@ -1,5 +1,5 @@
 # TODO
-Add action input
+Add more actions
 
 # DONE
-Banner and menu
+V1 :)

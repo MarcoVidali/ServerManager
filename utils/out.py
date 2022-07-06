@@ -62,13 +62,19 @@ def menu() -> None:
     print("\n")
 
 
-def fancy_input(prompt: str) -> str:
+def fancy_input(prompt: str, centered: bool = False) -> str:
+    from utils import feedback
     from os import get_terminal_size
+    
     print("\n")
 
-    space = (round(get_terminal_size()[0] / 2)) - len(prompt) - 1
-    prompt = f"{' ' * space}{prompt}"
+    if centered:
+        space = (round(get_terminal_size()[0] / 2)) - len(prompt) - 1
+        prompt = f"{' ' * space}{prompt}"
 
-    result = input(prompt)
+    try:
+        result = input(prompt)
+    except:
+        feedback.error("Ctrl-C isn't valid.")
 
     return result

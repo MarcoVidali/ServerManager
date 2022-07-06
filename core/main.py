@@ -7,8 +7,12 @@ def main() -> None:
     out.menu()
 
     # getting user action
-    action = out.fancy_input("Action: ")
-    action = int(action)
+    action = out.fancy_input("Action: ", True)
+    try:
+        action = int(action)
+    except:
+        feedback.error("Action not valid.")
+
     if not misc.check_input_range(action, 1, 6):
         feedback.error("Action number does not exist.")
 

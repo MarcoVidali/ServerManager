@@ -8,7 +8,7 @@ BANNER = """
 
 MENU_ITEMS = [
     "Get a shell",
-    "Copy files",
+    "Copy file/dir",
     "Update all",
     "Settings",
     "About",
@@ -16,3 +16,5 @@ MENU_ITEMS = [
 ]
 
 FEEDBACK_SLEEP_TIME = 2
+
+SETTINGS_PATH = "containers/settings.json"
